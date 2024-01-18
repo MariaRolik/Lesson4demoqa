@@ -11,18 +11,12 @@ public class SimpleJUnitTests {
 
     @BeforeEach
     void openPage() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
         Selenide.open("https://demoqa.com/automation-practice-form");
-       // executeJavaScript("$('footer').remove()");  // Скрытие футера
-        Configuration.holdBrowserOpen = true;
-    }
-
-
-    /*
-        @AfterEach
-        void closeWindow() {
-            WebDriverRunner.closeWindow();
         }
-    */
+
+
     @Test
     void firstTest(){
         $("[id=firstName]").setValue("Ivan");
@@ -46,7 +40,7 @@ public class SimpleJUnitTests {
         $("[id=submit]").click();
 
 
-        // проверка введенных данных
+
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Ivan Ivanov"));
