@@ -29,6 +29,7 @@ public class Lesson8 {
         $(".application-main").shouldHave(text("The AI-powered\n"+"developer platform."));
     }
 
+
     @Test
     void dragDropWithActions() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
