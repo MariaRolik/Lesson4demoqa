@@ -19,8 +19,8 @@ public class SimpleJUnitTests {
 
     @Test
     void firstTest(){
-        $("[id=firstName]").setValue("Ivan");
-        $("[id=lastName]").setValue("Ivanov");
+        $("[id=firstName]").setValue("Иван");
+        $("[id=lastName]").setValue("Иванов");
         $("[id=userEmail]").setValue("Ivanov@mail.ru");
         $(".custom-control-label").click();
         $("[id=userNumber]").setValue("1234567890");
@@ -43,7 +43,7 @@ public class SimpleJUnitTests {
 
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Ivan Ivanov"));
+        $(".table-responsive").shouldHave(text("Иван Иванов"));
         $(".table-responsive").shouldHave(text("Ivanov@mail.ru"));
         $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("1234567890"));
