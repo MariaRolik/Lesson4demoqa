@@ -11,15 +11,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class Lesson8 {
 
-    @BeforeEach
-    void openPage() {
-        Configuration.holdBrowserOpen = true;
-    }
-
-    @AfterEach
-    void closeWindow() {
-        WebDriverRunner.closeWindow();
-    }
 
     @Test
     void openSolutions() {

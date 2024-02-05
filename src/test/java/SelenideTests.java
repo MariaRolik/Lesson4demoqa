@@ -12,13 +12,9 @@ import static com.codeborne.selenide.Selenide.$;
 public class SelenideTests {
     @BeforeEach
     void openPage() {
-        Configuration.holdBrowserOpen = true;
+        //     Configuration.holdBrowserOpen = true;
     }
 
-    @AfterEach
-    void closeWindow() {
-        WebDriverRunner.closeWindow();
-    }
 
     @Test
     void homeWork7() {

@@ -30,7 +30,7 @@ public class SimpleJUnitTests {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("2024");
         $("#dateOfBirth-label").click();
-        $("[id=subjectsInput]").setValue("a").sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+        $("[id=subjectsInput]").setValue("Accounting").sendKeys(Keys.ENTER);
         $("label[for='hobbies-checkbox-1']").click();
         $("[id=uploadPicture]").uploadFromClasspath("img1.png");
         $("[id=currentAddress]").setValue("pyshkin street");
