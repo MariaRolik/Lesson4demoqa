@@ -1,6 +1,6 @@
 package tests;
 
-import components.RegistrationPage;
+import pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 

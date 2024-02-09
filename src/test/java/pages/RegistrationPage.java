@@ -1,14 +1,16 @@
-package components;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import components.CalendarComponent;
+import components.ModalWindowComponent;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
-    private SelenideElement
+    private final SelenideElement
 
             userForm = $("#userForm"),
             firstNameInput = $("#firstName"),
@@ -32,6 +34,8 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
@@ -39,6 +43,7 @@ public class RegistrationPage {
         firstNameInput.setValue(value);
         return this;
     }
+
 
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
@@ -109,7 +114,7 @@ public class RegistrationPage {
         modalWindowComponent.checkSubmitForm(fieldName, value);
         return this;
     }
-    public RegistrationPage checkValidation() {
+    public void checkValidation() {
         String valueName = "border-color";
         String colorRed = "rgb(220, 53, 69)";
         userForm.shouldHave(cssClass("was-validated"));
@@ -119,7 +124,6 @@ public class RegistrationPage {
         genderWrapper.$(byText("Female")).shouldHave(cssValue(valueName,colorRed));
         genderWrapper.$(byText("Other")).shouldHave(cssValue(valueName,colorRed));
         userNumberInput.shouldHave(cssValue(valueName,colorRed));
-        return this;
     }
 
 
