@@ -26,8 +26,8 @@ public class RegistrationWithFakerTests extends TestBase {
         String Year = getRandomYear();
         String Subjects = getRandomSubjects();
         String Hobbies = getRandomHobbies();
-        String State = faker.options().option(RandomUtils.getRandomState());
-        String City = faker.options().option(RandomUtils.getRandomCity(State));
+        String State = getRandomState();
+        String City = getRandomCity(State);
 
         open("/automation-practice-form");
 
